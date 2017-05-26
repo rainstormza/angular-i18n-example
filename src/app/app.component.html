@@ -12,9 +12,13 @@
   </label>
 </div>
 
-<p>test</p>
+<div>{{ 'HOME.HELLO' | translate:param }}</div>
 
-<h1 i18n>Hello world!</h1>
+<div [translate]="'HOME.HELLO'" [translateParams]="{value: 'world'}"></div>
+
+<!--<p>test</p>-->
+
+<!--<h1 i18n>Hello world!</h1>-->
 
 <!-- <template ngFor let-lang [ngForOf]="languages">
   <span *ngIf="lang.code !== localeId">

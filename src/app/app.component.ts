@@ -9,14 +9,14 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class AppComponent implements AfterViewInit {
   title = 'app works!';
-  getLangs;
-  currentLang;
+  // getLangs;
+  // currentLang;
 
-  languages = [
-    { code: 'en', label: 'English'},
-    { code: 'es', label: 'Español'},
-    { code: 'fr', label: 'Français'}
-  ];
+  // languages = [
+  //   { code: 'en', label: 'English'},
+  //   { code: 'es', label: 'Español'},
+  //   { code: 'fr', label: 'Français'}
+  // ];
 
   param = {value: 'world'};
   
@@ -27,6 +27,11 @@ export class AppComponent implements AfterViewInit {
     let browserLang = translate.getBrowserLang();
     console.log(browserLang);
     translate.use(browserLang.match(/en|fr|jp/) ? browserLang : 'en');
+
+    translate.get('HOME.HELLO', {value: 'world'}).subscribe((res: string) => {
+    console.log(res);
+    //=> 'hello world'
+});
   
   }
 
